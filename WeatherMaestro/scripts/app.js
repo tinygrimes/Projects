@@ -1,8 +1,8 @@
-const cityForm = document.querySelector("form");
-const card = document.querySelector(".card");
-const details = document.querySelector(".details");
-const time = document.querySelector("img.time");
-const icon = document.querySelector(".icon img");
+const cityForm = document.querySelector('form');
+const card = document.querySelector('.card');
+const details = document.querySelector('.details');
+const time = document.querySelector('img.time');
+const icon = document.querySelector('.icon img');
 const forecast = new Forecast();
 
 const updateUI = data => {
@@ -11,7 +11,7 @@ const updateUI = data => {
   const { cityDetails, weather } = data;
 
   //  update details template
-  if (cityDetails.Country.ID != "US") {
+  if (cityDetails.Country.ID != 'US') {
     details.innerHTML = `
   <h5 class="my-3">${cityDetails.EnglishName}, ${cityDetails.Country.EnglishName}</h5>
           <div class="my-3">${weather.WeatherText}</div>
@@ -33,17 +33,17 @@ const updateUI = data => {
 
   //  update the night/day & icon images:
   const iconSource = `img/icons/${weather.WeatherIcon}.svg`;
-  icon.setAttribute("src", iconSource);
+  icon.setAttribute('src', iconSource);
 
-  let timeSource = weather.IsDayTime ? "img/day.svg" : "img/night.svg";
-  time.setAttribute("src", timeSource);
+  let timeSource = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
+  time.setAttribute('src', timeSource);
 
-  if (card.classList.contains("d-none")) {
-    card.classList.remove("d-none");
+  if (card.classList.contains('d-none')) {
+    card.classList.remove('d-none');
   }
 };
 
-cityForm.addEventListener("submit", e => {
+cityForm.addEventListener('submit', e => {
   e.preventDefault();
   // get city value
   const city = cityForm.city.value.trim();
@@ -54,12 +54,12 @@ cityForm.addEventListener("submit", e => {
     .then(data => updateUI(data))
     .catch(err => console.log(err));
 
-  localStorage.setItem("city", city);
+  localStorage.setItem('city', city);
 });
 
-if (localStorage.getItem("city")) {
+if (localStorage.getItem('city')) {
   forecast
-    .updateCity(localStorage.getItem("city"))
+    .updateCity(localStorage.getItem('city'))
     .then(data => updateUI(data))
     .catch(err => console.log(err));
 }

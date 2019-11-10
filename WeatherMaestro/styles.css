@@ -2,14 +2,14 @@ body {
   background: deepskyblue;
   letter-spacing: 0.2em;
   font-size: 0.8em;
-  font-family: "Cinzel", serif;
+  font-family: 'Cinzel', serif;
 }
 .container {
-  font-family: "Cinzel", serif;
+  font-family: 'Cinzel', serif;
   max-width: 400px;
 }
 .container h1 {
-  font-family: "Leckerli One", cursive;
+  font-family: 'Leckerli One', cursive;
 }
 .icon {
   position: relative;
