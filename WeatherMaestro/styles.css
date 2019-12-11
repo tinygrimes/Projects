@@ -4,11 +4,11 @@ body {
   font-size: 0.8em;
 }
 .container {
-  font-family: 'Cinzel', serif;
+  font-family: "Timmana", sans-serif;
   max-width: 400px;
 }
 .container h1 {
-  font-family: 'Leckerli One', cursive;
+  font-family: "Leckerli One", cursive;
 }
 .icon {
   position: relative;
