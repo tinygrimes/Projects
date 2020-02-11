@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class PalindromeChecker {
 
-	private static Word checkPalindrome(String word, String originalWord) {
+	private static Word checkPalindrome(String originalWord) {
+		String word = originalWord;
 		word = word.toLowerCase().replaceAll(" ", "").replaceAll("-", "").replaceAll("'", "");
 
 		for (int i = 0; i < word.length() / 2; i++) {
@@ -34,7 +35,7 @@ public class PalindromeChecker {
 		List<Word> yesPal = new ArrayList<Word>();
 		List<Word> notPal = new ArrayList<Word>();
 		for (String testWord : words) {
-			Word word = checkPalindrome(testWord, testWord);
+			Word word = checkPalindrome(testWord);
 			if (word.isPalindrome()) {
 				yesPal.add(word);
 			} else {
